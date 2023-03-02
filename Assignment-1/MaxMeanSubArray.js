@@ -1,4 +1,5 @@
 // Question 1: MaxMeanSubArray
+// Technique: Fixed-size sliding window
 // Given an array of integers and an integer, k, find the maximum mean of a subarray of size k.
 
 // Examples:
