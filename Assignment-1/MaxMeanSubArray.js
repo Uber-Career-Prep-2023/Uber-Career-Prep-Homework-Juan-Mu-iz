@@ -11,7 +11,7 @@
 // Input k = 3
 // Output: 3
 
-// Input Array: [1, 1, 1, 1, -1, -1, 2, -1, -1]
+// Input Array: [1,, 1, 1, 1 -1, -1, 2, -1, -1]
 // Input k = 3
 // Output: 1
 
