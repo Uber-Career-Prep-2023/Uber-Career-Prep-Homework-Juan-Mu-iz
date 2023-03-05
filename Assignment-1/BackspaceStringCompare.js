@@ -119,7 +119,7 @@ function BackspaceStringCompare(s1, s2) {
 	return true;
 }
 
-
+console.log(BackspaceStringCompare("abcdef###xyz", "abcw#xyz"))
 // Space Complexity: O(1) because we dont use stack or something else
 // Time Complexity: O(n+m) n meaning the length of one and m the length of the other one
 
