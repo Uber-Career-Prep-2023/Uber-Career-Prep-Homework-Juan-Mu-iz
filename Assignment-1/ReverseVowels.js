@@ -24,7 +24,7 @@
 
 let stringExample = "Uber Career Prep";
 
-function checkIfIsVocal(letter) {
+function CheckIfIsVocal(letter) {
 	// Object (hash) to make better the lookup of the vocals O(1) instead of O(n)
 	let vocals = {
 		a: 1,
@@ -50,11 +50,11 @@ function ReverseVowels(sentence) {
 
 	while (p2 > p1) {
         // We search for the first vocal
-		while (!checkIfIsVocal(sentence[p1].toLowerCase()) && p2 > p1) {
+		while (!CheckIfIsVocal(sentence[p1].toLowerCase()) && p2 > p1) {
 			p1++;
 		}
         // We search for the last Vocal
-		while (!checkIfIsVocal(sentence[p2].toLowerCase()) && p2 > p1) {
+		while (!CheckIfIsVocal(sentence[p2].toLowerCase()) && p2 > p1) {
 			p2--;
 		}
 

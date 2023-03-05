@@ -15,7 +15,8 @@
 // Keypoints: Receive an array and return the number of subarrays that sums 0, they are disordered and they can be negative and positive.
 // Inputs and Outputs: Ill receive an array and return a count of subarrays, if its empty or dont have sums of 0 ill only return 0,
 
-// Method: Hashing the running computation, check if we have a repeated values, and if we have we found a subarray
+// Method: Hashing the running computation
+// check if we have a repeated values, and if we have we found a subarray
 
 // Example
 // [4, 5, 2, -1, -3, -3, 4, 6, -7]
