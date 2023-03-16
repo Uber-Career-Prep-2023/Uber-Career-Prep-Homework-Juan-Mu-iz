@@ -88,3 +88,6 @@ console.log(KAnagrams("apple", "peach", 2));
 
 // Time Complexity: O(n + m) n meaning the length of the first string and m of the second string
 // Space Complexity: O(n) n meaning the length of the first string, this because we storage each unique character in the hash map
+
+// Time taken: 25 minutes, Similar than other ones
+// Feeling: Easy

@@ -45,3 +45,6 @@ console.log(MissingInteger([1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12], 12));
 
 // Time Complexity: O(n) n meaning the elemnts of the array
 // Space Complexity: O(1)
+
+// Time taken: 20 minutes, many aproaches to this one
+// Feeling: Easy Easy

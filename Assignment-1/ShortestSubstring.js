@@ -65,7 +65,10 @@ function ShortestSubstring(s, target) {
 		// Step 4: When we find all the letters that means we find the first subarray
 		while (foundLetters === targetCountLetters) {
 			// We check if is the smaller
-			if (minimunWindowSize > endWindow - startWindow + 1 || minimunWindowSize === null) {
+			if (
+				minimunWindowSize > endWindow - startWindow + 1 ||
+				minimunWindowSize === null
+			) {
 				minimunWindowSize = endWindow - startWindow + 1;
 			}
 			// We check if the beginning is the start of the window
@@ -73,13 +76,14 @@ function ShortestSubstring(s, target) {
 			if (countOfLetterToFind[s[startWindow]] != null) {
 				// We increse the count to find
 				countOfLetterToFind[s[startWindow]] += 1;
+				// Just if is grater than 0, if not we have more than we were searching
 				if (countOfLetterToFind[s[startWindow]] > 0) {
 					// And we decrese the number of letter we already found
 					foundLetters--;
 				}
 			}
 			// If its not the beginning we iterate increasing the start and then checks if its smaller, until it found the first representative letter of the window to find it again
-			// "asa" locking for "sa" it increase the start until the last "a" because a is not to decrease foundLetters and s it will so its not going to repeat again
+			// "asa" looking for "sa" it increase the start until the last "a" because first a is not to decrease foundLetters and s it will, so its not going to repeat again the while
 			startWindow++;
 		}
 		// We increase the window
@@ -87,10 +91,12 @@ function ShortestSubstring(s, target) {
 	}
 	// Step 5: Return minimum subarray length
 	return minimunWindowSize;
-	
 }
 
 console.log(ShortestSubstring("zxycbaabcdwxyzzxwdcbxyzabccbazyx", "zzyzx"));
 
-// Time Complexity: O(n) n meaning the elements of the string 
+// Time Complexity: O(n) n meaning the elements of the string
 // Space Complexity: O(n) n meaning the elements of the target, because in base of that we create a hashmap
+
+// Time taken: 90 minutes, like, not sure, I improved the code but I had the solution before
+// Feeling: Medium

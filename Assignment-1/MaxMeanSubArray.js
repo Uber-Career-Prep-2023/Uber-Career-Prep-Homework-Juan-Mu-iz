@@ -61,3 +61,6 @@ console.log(MaxMeanSubArray(exampleArray, k));
 
 // Space Complexity: O(1) (maxSum, currentSum variables)
 // Time Complexity: O(n) (n meaning elements of the array)
+
+// Time taken: 30 minutes
+// Feeling: Easy

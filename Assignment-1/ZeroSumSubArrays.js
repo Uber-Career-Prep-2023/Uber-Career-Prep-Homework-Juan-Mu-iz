@@ -60,3 +60,10 @@ console.log(ZeroSumArray(exampleArray));
 
 // Space Complexity: O(n) (n meaning the elements of numbers)
 // Time Complexity: O(n) (n meaning the elements of numbers)
+
+
+// Time Complexity: O(n) n meaning the elements of the string
+// Space Complexity: O(n) n meaning the elements of the target, because in base of that we create a hashmap
+
+// Time taken: 30 minutes, I just found a pattern of repeated values while printing the hashmap, before that is a little bit hard
+// Feeling: Medium

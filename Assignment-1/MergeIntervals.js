@@ -71,3 +71,6 @@ console.log(MergeIntervals([[5, 8],[6, 10],[2, 4],[3, 6],]));
 
 // Space Complexity: O(n) n meaning the number of intervals
 // Time Complexity: O(n log n) meaning the number of intervals, this because we have to sort the elements before the iteration
+
+// Time taken: 30 minutes, not sure if I did the better complexity, but it looks good
+// Feeling: Easy

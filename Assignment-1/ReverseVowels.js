@@ -73,3 +73,6 @@ console.log(ReverseVowels("Uber Career Prep"));
 // Space Complexity: O(1) (Only the vocals, and pointers, they are always the same amount)
 // Time Complexity: O(n) (n meaning elements of the array)
 // We have some trade off in space and time, we can put the uppercase in the vocals to reduce the time and increment the memory, also the objects arent the most optimize thing in terms of memory
+
+// Time taken: 30 minutes, just search and swap
+// Feeling: Easy
