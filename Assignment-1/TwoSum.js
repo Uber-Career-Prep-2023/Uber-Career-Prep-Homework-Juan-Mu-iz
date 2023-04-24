@@ -57,7 +57,7 @@ function TwoSum(numbers, k) {
 	return countOfPairs;
 }
 
-console.log(TwoSum([3, 3, 3, 3, 3], 6));
+console.log(TwoSum([3, 3, 3], 6));
 
 // Time Complexity: O(n) n meaning the elements numbers
 // Space Complexity: O(n) n meaning the elements of numbers
