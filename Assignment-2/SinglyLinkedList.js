@@ -20,7 +20,7 @@ class Node {
 	}
 }
 
-class LinkedList {
+export class LinkedList {
 	constructor(head = null) {
 		this.head = head;
 		this.tail = head;
@@ -46,7 +46,8 @@ class LinkedList {
 	}
 
 	// We connect the newNode to head and convert head to the newNode
-	insertAtFront(newNode) {
+	insertAtFront(val) {
+		let newNode = new Node(val)
 		// Check if we dont have head
 		if (!this.head) {
 			this.head = newNode;
@@ -58,9 +59,10 @@ class LinkedList {
 		this.length++;
 	}
 	// Time Complexity: O(1) always doind the add to head
-	// Space Complexity: O(1) no space 
-	
-	insertAtBack(newNode) {
+	// Space Complexity: O(1) no space
+
+	insertAtBack(val) {
+		let newNode = new Node(val)
 		// Check if we dont have head
 		if (!this.head) {
 			this.head = newNode;
@@ -72,9 +74,10 @@ class LinkedList {
 		this.length++;
 	}
 	// Time Complexity: O(1) always doind the add to tail
-	// Space Complexity: O(1) no space 
+	// Space Complexity: O(1) no space
 
-	insertAfter(newNode, lookingNode) {
+	insertAfter(val, lookingNode) {
+		let newNode = new Node(val)
 		// Iterate the array until find it
 		let currentNode = this.head;
 		while (currentNode) {
@@ -90,6 +93,17 @@ class LinkedList {
 	// Time Complexity: O(n) n meaning the number of nodes
 	// Space Complexity: O(1) the pointer variable
 
+	deleteFront() {
+		if (this.head) {
+			let currentNode = this.head;
+			this.head = this.head.next;
+			this.length--;
+
+			return currentNode;
+		}
+	}
+	// Time Complexity: O(1) Always the same
+	// Space Complexity: O(1) the pointer variable
 
 	deleteBack() {
 		// Iterate until we find the end with previous pointer
@@ -114,7 +128,6 @@ class LinkedList {
 	}
 	// Time Complexity: O(n) n meaning the number of nodes
 	// Space Complexity: O(1) the pointer variable
-
 
 	deleteNode(lookingNode) {
 		// Iterate until we find the end with previous pointer
@@ -148,7 +161,6 @@ class LinkedList {
 	}
 	// Time Complexity: O(n) n meaning the number of nodes
 	// Space Complexity: O(1) The pointers
-
 
 	// It can be also done with a loop and counting
 	getLength() {
@@ -210,11 +222,11 @@ class LinkedList {
 let nodeLoc = new Node(5);
 let MyLinkedList = new LinkedList(nodeLoc);
 // 5
-MyLinkedList.insertAtFront(new Node(4));
+MyLinkedList.insertAtFront(4);
 // 4 5
-MyLinkedList.insertAtBack(new Node(7));
+MyLinkedList.insertAtBack(7);
 // 4 5 7
-MyLinkedList.insertAfter(new Node(6), nodeLoc);
+MyLinkedList.insertAfter(6, nodeLoc);
 // 4 5 6 7
 MyLinkedList.deleteBack();
 // 4 5 6

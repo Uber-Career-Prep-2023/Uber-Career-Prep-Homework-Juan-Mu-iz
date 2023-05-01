@@ -1,1 +1,2 @@
-MyLinkedList.printLinkedList();
+
+myBinarySearchTree.insert(5);
