@@ -1,2 +1,3 @@
 
-myBinarySearchTree.insert(5);
+
+let myLinkedList = new LinkedList();
