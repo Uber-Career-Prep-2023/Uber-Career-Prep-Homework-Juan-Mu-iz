@@ -1,3 +1,1 @@
-
-
-let myLinkedList = new LinkedList();
+console.log(queue.dequeue())

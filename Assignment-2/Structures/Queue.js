@@ -20,7 +20,7 @@ export class Queue {
 		if (this.isEmpty()) {
 			return "No elements in the queue";
 		}
-		return this.data.deleteFront();
+		return this.data.deleteFront().data;
 	}
 
 	isEmpty() {

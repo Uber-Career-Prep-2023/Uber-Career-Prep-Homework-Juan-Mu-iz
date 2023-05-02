@@ -7,6 +7,8 @@
 // void insert(int val) // creates a new Node with data val in the appropriate location
 // int delete(int val) // deletes the Node with data val, if it exists
 
+import { Queue } from "./Structures/Queue.js";
+
 class Node {
 	constructor(data) {
 		this.data = data;
@@ -23,22 +25,21 @@ class BinarySearchTree {
 	printBinarySearch() {
 		// To dont modify general head
 		let currentNode = this.root;
-		let stack = [currentNode];
+		let queue = new Queue();
+		queue.enqueue(currentNode);
 
-		while (stack.length > 0) {
-			currentNode = stack[0];
-			stack.shift();
+		while (!queue.isEmpty()) {
+			currentNode = queue.dequeue();
 			if (currentNode.left) {
-				stack.push(currentNode.left);
+				queue.enqueue(currentNode.left);
 			}
 			if (currentNode.right) {
-				stack.push(currentNode.right);
+				queue.enqueue(currentNode.right);
 			}
 			console.log(currentNode.data);
 		}
 	}
 
-	// returns the minimum value in the BST
 	min() {
 		let currentNode = this.root;
 
