@@ -23,15 +23,82 @@
 
 ///////// PROCESS THINKING /////////
 
-//  Every time we add a new nuber the previous number are reapeted, when we add 10-11, we repeated the 0 and 1 after the new 1 added. So, if we can add the previous values to the new value we can create the new one in base of the previous. To pass the previous values we can use a queue to save them
+// We can use topological sort to find a way to take the courses in the correct order. We can use Kahn's algorithm to find a valid topological sort.
 
 ///////// CODING /////////
-function ReverseWords() {
-	return "";
+function buildAdjacencyList(nodes, edges) {
+	// Create an empty adjacency list
+    const adjacencyList = {};
+
+	// Iterate over the nodes
+    for (const node of nodes) {
+        adjacencyList[node] = [];
+    }
+
+	// Iterate over the edges
+    for (const [node, prerequisites] of Object.entries(edges)) {
+		// Iterate over the prerequisites
+        for (const prerequisite of prerequisites) {
+			// Add the node to the adjacency list of the prerequisite
+            if (adjacencyList[prerequisite]) {
+                adjacencyList[prerequisite].push(node);
+            }
+        }
+    }
+
+    return adjacencyList;
 }
 
-// Time Complexity: O(n) It could be improve if we use a real queue ,the improvement would still be O(n)
-// Space Complexity: O(n)
+function dfsVisit(adjacencyList, visited, sortedList, node) {
+	// Check if the node has already been visited
+    if (visited.has(node)) {
+        return;
+    }
 
-// Time: 20 minutes
-// Feeling: Easy, i quickly recognized the idea of the solution, I tried with adding the previous values with index. Founding a queue was the result of seeing the examples a little bit more, and see that every time its just adding at the end a 1 and a 0
+    visited.add(node);
+
+	// Iterate over the neighbors of the current node
+    for (const neighbor of adjacencyList[node]) {
+        dfsVisit(adjacencyList, visited, sortedList, neighbor);
+    }
+
+	// Add the current node to the front of sorted list
+    sortedList.unshift(node);
+}
+
+
+function topologicalSort(adjacencyList) {
+	// Create a set to keep track of visited nodes
+    const visited = new Set();
+    const sortedList = [];
+
+	// Iterate over the nodes
+    for (const node of Object.keys(adjacencyList)) {
+        dfsVisit(adjacencyList, visited, sortedList, node);
+    }
+
+    return sortedList;
+}
+
+function PrerequisiteCourses(courses, prerequisites) {
+    const graph = buildAdjacencyList(courses, prerequisites);
+	
+    return topologicalSort(graph);
+}
+
+// Test cases
+const courses1 = ["Intro to Programming", "Data Structures", "Advanced Algorithms", "Operating Systems", "Databases"];
+const prerequisites1 = {
+    "Data Structures": ["Intro to Programming"],
+    "Advanced Algorithms": ["Data Structures"],
+    "Operating Systems": ["Advanced Algorithms"],
+    "Databases": ["Advanced Algorithms"]
+};
+
+console.log(PrerequisiteCourses(courses1, prerequisites1)); 
+
+// Time Complexity: O(V + E)
+// Space Complexity: O(V + E) 
+
+// Time: 25 minutes
+// Feeling: Easy-medium, I had to look up how to implement Kahn's algorithm for topological sorting. I remember that we did it on the graph structure, so I had to look up again how it works.

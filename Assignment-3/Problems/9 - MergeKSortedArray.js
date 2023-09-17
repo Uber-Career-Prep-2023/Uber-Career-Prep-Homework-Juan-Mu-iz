@@ -15,17 +15,23 @@
 
 ///////// PROCESS THINKING /////////
 
-//  Every time we add a new nuber the previous number are reapeted, when we add 10-11, we repeated the 0 and 1 after the new 1 added. So, if we can add the previous values to the new value we can create the new one in base of the previous. To pass the previous values we can use a queue to save them
+//  Concatenate all the arrays into a single array and sort it
 
 ///////// CODING /////////
-function ReverseWords() {
-
-	return "";
+function mergeKSortedArrays(k, arrays) {
+    // Merge all arrays into a single array
+    const mergedArray = [].concat(...arrays);
+    
+    // Sort the merged array
+    mergedArray.sort((a, b) => a - b);
+    
+    return mergedArray;
 }
 
+console.log(mergeKSortedArrays(2, [[1, 2, 3, 4, 5], [1, 3, 5, 7, 9]]));
 
-// Time Complexity: O(n) It could be improve if we use a real queue ,the improvement would still be O(n) 
-// Space Complexity: O(n) 
+// Time: O(n log n)
+// Space: O(n)
 
-// Time: 20 minutes
-// Feeling: Easy, i quickly recognized the idea of the solution, I tried with adding the previous values with index. Founding a queue was the result of seeing the examples a little bit more, and see that every time its just adding at the end a 1 and a 0
+// Time: 5 minutes
+// Feeling: Easy, it could be done more efficiently using a min heap
